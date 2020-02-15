@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "d5d66d55-2ca1-4dfb-8660-68535ea80bb0",
+		"name": "OC-News",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create News",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"imageUrl\": \"https://www.crictracker.com/wp-content/uploads/2020/02/Martin-Guptill-and-Navdeep-Saini.jpg\",\n    \"contentUrl\": \"https://www.crictracker.com/navdeep-saini-reveals-martin-guptill-as-the-most-challenging-batsman-he-has-ever-bowled-to/\",\n    \"title\": \"Navdeep Saini reveals Martin Guptill as the most challenging batsman he has ever bowled to\",\n    \"contentCredits\": \"Cric Tracker\",\n    \"imageCredit\": \"Cric Tracker\",\n    \"createUserId\": \"phani\"\n}"
+				},
+				"url": {
+					"raw": "https://api.onecricket.app/admin/news",
+					"protocol": "https",
+					"host": [
+						"api",
+						"onecricket",
+						"app"
+					],
+					"path": [
+						"admin",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get News",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "EDsGm5WVRSCL4rtYrdwJRX8J",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.onecricket.app/admin/news/1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"onecricket",
+						"app"
+					],
+					"path": [
+						"admin",
+						"news",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete News",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newsId\": \"5e40cc7fbfb17320329e0631\",\n    \"userId\": \"phani\"\n}"
+				},
+				"url": {
+					"raw": "https://api.onecricket.app/admin/news",
+					"protocol": "https",
+					"host": [
+						"api",
+						"onecricket",
+						"app"
+					],
+					"path": [
+						"admin",
+						"news"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

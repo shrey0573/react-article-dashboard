@@ -1,11 +1,57 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding:0;
+  background-size: cover;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.bg{
+ 
+  }
+  
+  .bg .view {
+    /* background-image: url("https://mdbootstrap.com/img/Photos/Others/architecture.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+  }
+  
+  .bg h6 {
+    line-height: 1.7;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .bg .animated img {
+      max-height: 50vh;
+      transform: translateX(-50%);
+      left: 50%;
+      position: absolute;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .bg .animated img {
+      max-height: 35vh;
+      transform: translateX(-50%);
+      left: 50%;
+    }
+  }
+  
+  @media (max-width: 767px) and (orientation: landscape) {
+    .bg .animated img {
+      max-height: 50vh;
+      transform: translateX(-50%);
+      left: 50%;
+      position: relative;
+    }
+  }
+  @media (max-width: 1000px) and (orientation: landscape) {
+    .bg .view {
+      min-height: 150vh;
+    }
+  }
+  
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
