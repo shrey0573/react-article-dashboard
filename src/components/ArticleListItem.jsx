@@ -8,9 +8,10 @@ class ArticleListItem extends Component {
       <div>
         <Row className="show-grid">
             
-          <Card style={{ width: "40rem", marginTop: 50}} MdFormatAlignLeft>
+          <Card style={{ width: "40rem", marginTop: 50, textAlign: 'left'}}>
             <Card.Body>
-              <Card.Title>{article.title}</Card.Title>
+              <img style={{float:'left', marginRight: 10, borderRadius: 3}} src="https://www.crictracker.com/wp-content/uploads/2020/02/Heather-Knight.jpg" alt="" width="150" />
+              <Card.Title><strong>{article.title}</strong></Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
                 {article.id}
               </Card.Subtitle>
@@ -18,8 +19,8 @@ class ArticleListItem extends Component {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Button style={{margin : 5}} variant="primary" onClick={this.handleUpdateArticle}>Update </Button >
-              <Button style={{margin : 5}} variant="danger" onClick={this.handleDeleteArticle}> Delete</Button >
+              <Button style={{margin : 5, float: 'right'}} variant="danger" onClick={this.handleDeleteArticle}> Delete</Button >
+              <Button style={{margin : 5, float: 'right'}} variant="primary" onClick={this.handleUpdateArticle}>Update </Button >
             </Card.Body>
           </Card>
         </Row>

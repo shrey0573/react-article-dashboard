@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import WriterForm from "./components/ArticleForm";
 import ArticleList from "./components/ArticleList";
 import Navigate from "./Nav";
+import axios from 'axios';
 import { Container, Row, Col } from "react-bootstrap";
 
 class Home extends Component {
@@ -14,20 +15,16 @@ class Home extends Component {
     };
   }
   componentDidMount() {
-    const url="https://jsonplaceholder.typicode.com/todos/";
-    fetch(url,
-    {
-        header: {
-            'Content-type' : 'application/json',
-            // 'Authorization' : 'EDsGm5WVRSCL4rtYrdwJRX8J',
-        },
-        // mode: 'no-cors'
-    })
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({articles: data});
+    axios.get('https://api.onecricket.app/admin/news/1',{
+      headers : {
+        'Authorization' : 'EDsGm5WVRSCL4rtYrdwJRX8J',
+        'Content-type' : 'application/x-www-form-urlencoded',
+      }
+    }
+    )
+      .then(res => {
+        this.setState({ articles : res.data });
       })
-      .catch(error => console.log("error", error));
   }
 
   render() {
@@ -36,10 +33,10 @@ class Home extends Component {
         <Navigate user={this.props.user} />
         <Container>
           <Row className="show-grid">
-            <Col md={6}>
+            <Col md={7}>
               <ArticleList articles={this.state.articles} />
             </Col>
-            <Col md={6}>
+            <Col md={5}>
               <WriterForm user={this.props.user} />
             </Col>
           </Row>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
-import Navigate from "../Nav";
+// import Navignpate from "../Nav";
 import "../index.css";
-import fire from "../config/Firebase";
+// import fire from "../config/Firebase";
 
 class WriterForm extends Component {
   constructor(props) {
@@ -51,9 +51,8 @@ class WriterForm extends Component {
   handleSubmit(event) {
     try {
       event.preventDefault();
-      const proxyurl="https://cors-anywhere.herokuapp.com/";
-      const url="https://api.onecricket.app/admin/news";
-      fetch(proxyurl+url, {
+      const url="https://api.onecricket.app/admin/news/";
+      fetch(url, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +69,7 @@ class WriterForm extends Component {
         }),
         redirect: "follow"
       })
-        .then(response => {return response.json()})
+        .then(response => response.text())
         .then(result => console.log(result));
     } catch (error) {
       console.log("error", error);
@@ -82,7 +81,7 @@ class WriterForm extends Component {
       <div className="formlogin">
         {/* <Button className="logoutbtn" variant="danger" onClick={this.logout} style={{borderRadius: 20, width: 85 }}>Logout</Button> */}
         <h1
-          style={{ fontFamily: "Montserrat", marginTop: 30, textAlign: "left" }}
+          style={{ fontFamily: "Montserrat", marginTop: 30, textAlign: "center" }}
         >
           Create <strong>News</strong> Here
         </h1>

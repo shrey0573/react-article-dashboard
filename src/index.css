@@ -55,9 +55,23 @@
   transform: translate(-5px, -53px);
   margin:10px;
 }
+.App{
+  /* background: linear-gradient(
+    rgb(43, 43, 43),
+    rgb(0, 52, 82) 
+  );*/
+}
+.articles-list{
+  border-right: 1px solid rgba(156, 156, 156, 0.699);
+  padding-right: 20%;
+}
 .formlogin{
-  border-left: 1px solid rgba(128, 128, 128, 0.555);
-  padding-left: 10px;
+  /* border-left: 1px solid rgba(128, 128, 128, 0.555); */
+  padding: 0px 10px 10px 10px;
+  border: 2px solid rgb(204, 204, 204);
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: 10%;
 }
 body {
   margin: 0;
@@ -67,7 +81,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: transparent;
+  /* background: transparent; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
