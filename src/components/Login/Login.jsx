@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {MdHttps, MdAccountCircle} from 'react-icons/md';
-import Navigate from "./Nav";
-import fire from './config/Firebase';
-import "./index.css";
+import Navigate from "../../Nav";
+import fire from '../../config/Firebase';
+import "../../index.css";
 
 class Login extends Component {
   constructor(props) {

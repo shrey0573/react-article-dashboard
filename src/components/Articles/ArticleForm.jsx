@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 // import Navignpate from "../Nav";
-import "../index.css";
+import "../../index.css";
+import cuid from 'cuid';
 // import fire from "../config/Firebase";
 
 class WriterForm extends Component {
@@ -51,26 +52,28 @@ class WriterForm extends Component {
   handleSubmit(event) {
     try {
       event.preventDefault();
-      const url="https://api.onecricket.app/admin/news/";
+      const url="/admin/news/";
       fetch(url, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
           "Authorization": "EDsGm5WVRSCL4rtYrdwJRX8J"
         },
-        mode: "no-cors",
+        // mode: "no-cors",
         body: JSON.stringify({
           imageUrl: `${this.state.imageURL}`,
           contentUrl: `${this.state.contentURL}`,
           title: `${this.state.title}`,
           contentCredits: `${this.state.contentCredits}`,
           imageCredit: `${this.state.imageCredit}`,
-          createUserId: `${this.props.user.uid}`
+          createUserId: `${this.props.user.uid}`,
+          newsId: `${cuid()}` 
         }),
         redirect: "follow"
       })
         .then(response => response.text())
-        .then(result => console.log(result));
+        .then(result => {console.log(result, "Submitted successfully");
+        window.location.reload()});
     } catch (error) {
       console.log("error", error);
     }

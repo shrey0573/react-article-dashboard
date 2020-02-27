@@ -4,11 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Navigate from "./Nav";
 // import WriterForm from "./components/ArticleForm";
 import Home from './Home'
-import Login from "./Login";
+import Login from "./components/Login/Login";
 import "./App.css";
 import "./index.css";
 import fire from "./config/Firebase";
-import { MdLocalGroceryStore } from "react-icons/md";
 
 class App extends Component {
 
