@@ -15,6 +15,7 @@ class WriterForm extends Component {
       title: "",
       contentCredits: "",
       imageCredit: "",
+      data: "",
       createUserId: ""
     };
   }
@@ -44,9 +45,9 @@ class WriterForm extends Component {
       imageCredit: event.target.value
     });
   };
-  handlecreateUserId = event => {
+  handleInputData = event => {
     this.setState({
-      createUserId: event.target.value
+      data: event.target.value
     });
   };
   handleSubmit(event) {
@@ -67,6 +68,7 @@ class WriterForm extends Component {
           contentCredits: `${this.state.contentCredits}`,
           imageCredit: `${this.state.imageCredit}`,
           createUserId: `${this.props.user.uid}`,
+          data: `${this.state.data}`,
           newsId: `${cuid()}` 
         }),
         redirect: "follow"
@@ -128,6 +130,19 @@ class WriterForm extends Component {
                   type="text"
                   value={this.state.contentURL}
                   onChange={this.handleContentURL.bind(this)}
+                  placeholder="Enter the link of article"
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} style={{overflowY : "auto", overflowX : "hidden"}}>
+              <Form.Label column md={2}>
+                <strong>Article Content</strong>
+              </Form.Label>
+              <Col md={10}>
+                <Form.Control
+                  type="text"
+                  value={this.state.data}
+                  onChange={this.handleInputData.bind(this)}
                   placeholder="Enter the content of article"
                 />
               </Col>
