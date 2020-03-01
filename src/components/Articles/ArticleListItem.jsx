@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Row, Button } from "react-bootstrap";
 import { MdCancel, MdEdit } from "react-icons/md";
+import '../../index.css'
 
 class ArticleListItem extends Component {
   handleDeleteArticle = newsId => {
@@ -31,7 +32,7 @@ class ArticleListItem extends Component {
     return (
       <div>
         <Row className="show-grid">
-          <Card
+          <Card className="card-item"
             style={{
               width: "40rem",
               marginTop: 50,

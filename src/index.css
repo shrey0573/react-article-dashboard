@@ -19,6 +19,18 @@
   min-height: 100%;
   min-width: 100%;
 } */
+.articles-list{
+  /* background: gray; */
+}
+
+.card-item{
+  box-shadow: 0px 5px 10px rgba(175, 175, 175, 0.438);
+  transition: all 0.35s ease-in-out;
+}
+.card-item:hover{
+  transform: translateY(-5px);
+}
+
 .masthead{
   margin-top: 5%;
   display: flex;

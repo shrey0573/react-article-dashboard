@@ -1,91 +1,11 @@
-import React, { Component } from "react";
-import { Button, Form, Row, Col, Container } from "react-bootstrap";
-// import Navignpate from "../Nav";
-import "../../index.css";
-import cuid from 'cuid';
-// import fire from "../config/Firebase";
+import React, { Component } from 'react';
+import {Form, Login, Button, Container} from 'react-bootstrap';
 
-class WriterForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      imageURL: "",
-      contentURL: "",
-      title: "",
-      contentCredits: "",
-      imageCredit: "",
-      data: "",
-      createUserId: ""
-    };
-  }
-
-  handleImageURL = event => {
-    this.setState({
-      imageURL: event.target.value
-    });
-  };
-  handleContentURL = event => {
-    this.setState({
-      contentURL: event.target.value
-    });
-  };
-  handleTitle = event => {
-    this.setState({
-      title: event.target.value
-    });
-  };
-  handlecontentCredits = event => {
-    this.setState({
-      contentCredits: event.target.value
-    });
-  };
-  handleImageCredits = event => {
-    this.setState({
-      imageCredit: event.target.value
-    });
-  };
-  handleInputData = event => {
-    this.setState({
-      data: event.target.value
-    });
-  };
-  handleSubmit(event) {
-    try {
-      event.preventDefault();
-      const url="/admin/news/";
-      fetch(url, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "EDsGm5WVRSCL4rtYrdwJRX8J"
-        },
-        // mode: "no-cors",
-        body: JSON.stringify({
-          imageUrl: `${this.state.imageURL}`,
-          contentUrl: `${this.state.contentURL}`,
-          title: `${this.state.title}`,
-          contentCredits: `${this.state.contentCredits}`,
-          imageCredit: `${this.state.imageCredit}`,
-          createUserId: `${this.props.user.uid}`,
-          data: `${this.state.data}`,
-          newsId: `${cuid()}` 
-        }),
-        redirect: "follow"
-      })
-        .then(response => response.text())
-        .then(result => {console.log(result, "Submitted successfully");
-        window.location.reload()});
-    } catch (error) {
-      console.log("error", error);
-    }
-  }
-
-  render() {
-    return (
-      <div className="formlogin">
-        {/* <Button className="logoutbtn" variant="danger" onClick={this.logout} style={{borderRadius: 20, width: 85 }}>Logout</Button> */}
-        <h1
+class PopupForm extends Component {
+    render() {
+        return (
+            <div>
+                <h1
           style={{ fontFamily: "Montserrat", marginTop: 30, textAlign: "center" }}
         >
           Create <strong>News</strong> Here
@@ -180,8 +100,8 @@ class WriterForm extends Component {
             </Button>
           </Form>
         </Container>
-      </div>
-    );
-  }
+            </div>
+        )
+    }
 }
-export default WriterForm;
+export default PopupForm;

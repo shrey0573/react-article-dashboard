@@ -2,7 +2,7 @@
   "name": "react-content",
   "version": "0.1.0",
   "private": true,
-  "proxy" : "https://api.onecricket.app",
+  "proxy": "https://api.onecricket.app",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -11,6 +11,7 @@
     "bootstrap": "^4.4.1",
     "cuid": "^2.1.8",
     "firebase": "^7.8.1",
+    "http-proxy-middleware": "^1.0.0",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "react": "^16.12.0",
