@@ -53,7 +53,7 @@ class WriterForm extends Component {
   handleSubmit(event) {
     try {
       event.preventDefault();
-      const url="/admin/news/";
+      const url="/news/";
       fetch(url, {
         method: "post",
         headers: {

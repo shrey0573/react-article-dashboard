@@ -18,7 +18,7 @@ class ArticleListItem extends Component {
       redirect: "follow"
     };
 
-    fetch("/admin/news", requestOptions)
+    fetch("/news", requestOptions)
       .then(response => response.text())
       .then(result => {
         console.log(result, "deleted");

@@ -11,7 +11,7 @@ class ArticleList extends Component {
         };
       }
       componentDidMount() {
-        axios.get('/admin/news/1',{
+        axios.get('/news/1',{
           headers : {
              'Authorization' : 'EDsGm5WVRSCL4rtYrdwJRX8J',
             'Content-type' : 'application/x-www-form-urlencoded',
